@@ -1,50 +1,37 @@
 <?php
 
 /**
- * wangEditor css 相关依赖
+ * CKEditor css 相关依赖
  * 
  * @return string
  */
 function ckeditor_css()
 {
 
-    return '<!--wangEditor css-->
-<link rel="stylesheet" type="text/css" href="/vendor/wangEditor/dist/wangEditor.min.css">';
+    return '<!--CKEditor css-->
+    <link href="/vendor/ckeditor/contents.css" rel="stylesheet">';
 
 }
 
 /**
- * wangEditor js 相关依赖
+ * CKEditor js 相关依赖
  *
  * @param boolean $using_min 是否使用压缩版js，默认true
  * @return string
  */
-function we_js($using_min = true)
+function ckeditor_js()
 {
-
-    if ($using_min) {
-        return '<script type="text/javascript">
-    window.jQuery || document.write(unescape("%3Cscript%20type%3D%22text/javascript%22%20src%3D%22//cdn.bootcss.com/jquery/3.2.1/jquery.min.js%22%3E%3C/script%3E"));
-</script>
-<!--wangEditor js-->
-<script type="text/javascript" src="/vendor/wangEditor/dist/wangEditor.min.js"></script>';
-    } else {
-        return '<script type="text/javascript">
-    window.jQuery || document.write(unescape("%3Cscript%20type%3D%22text/javascript%22%20src%3D%22//cdn.bootcss.com/jquery/3.2.1/jquery.min.js%22%3E%3C/script%3E"));
-</script>
-<!--wangEditor js-->
-<script type="text/javascript" src="/vendor/wangEditor/dist/wangEditor.js"></script>';
-    }
-
+    return '<script type="text/javascript" src="/vendor/ckeditor/ckeditor.js"></script>';
 }
 
 /**
- * wangEditor 初始化配置js代码
+ * CKEditor 初始化配置js代码
  * 
- * @param  string $editor_id 编辑器 `textarea` 所属id值，默认取 `wangeditor` 字符串
+ * @param  string $editor_id 编辑器 `textarea` 所属id值，默认取 `ckeditor` 字符串
+ * @param  string $mode 编辑器 使用的模式，默认取 `basic` 默认
  * @return string
  */
-function we_config($editor_id = 'wangeditor')
+function ckeditor_config($editor_id = 'ckeditor', $mode = 'basic')
 {
     $uploadImgServer = config('wang-editor.uploadImgServer', '/laravel-wang-editor/upload');
     $pasteFilterStyle = config('wang-editor.pasteFilterStyle', 'false');
@@ -127,7 +114,7 @@ EOT;
  * @param  string $default 编辑器默认正文内容
  * @return string
  */
-function we_field($editor_id = 'wangeditor', $field_name = 'content', $default = '')
+function ckeditor_field($editor_id = 'wangeditor', $field_name = 'content', $default = '')
 {
     $html = <<<EOT
 <div id="{$editor_id}">
