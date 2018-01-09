@@ -32,15 +32,15 @@ class CKEditorServiceProvider extends \Illuminate\Support\ServiceProvider
         //配置
         $configPath = __DIR__ . '/../config/ckeditor.php';
         $this->mergeConfigFrom($configPath, 'ckeditor');
-        $this->publishes([$configPath => config_path('ckeditor.php')], 'config');
+        $this->publishes([$configPath => config_path('ckeditor.php')]);
 
         //公共资源
         $publicPath = __DIR__ . '/../public';
-        $this->publishes([$publicPath => public_path('')], 'public');
+        $this->publishes([$publicPath => public_path('')]);
 
         //视图
         $viewPath = __DIR__ . '/../resources/views';
-        $this->publishes([$viewPath => base_path('resources/views/vendor/ckeditor')], 'view');
+        $this->publishes([$viewPath => base_path('resources/views/vendor/ckeditor')], 'laravel-ckeditor-view');
         $this->loadViewsFrom($viewPath, 'ckeditor');
 
         //路由
