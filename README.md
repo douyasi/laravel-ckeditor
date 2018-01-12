@@ -1,4 +1,4 @@
-# CKEditor for Laravel
+# # CKEditor for Laravel
 
 >  `CKEditor` —— 国外大名鼎鼎的富文本编辑器，官方网站：https://ckeditor.com/ 。
 
@@ -35,11 +35,27 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
 
 ## 使用说明
 
-参考本扩展包 `resources\views` 目录下 `example` 代码，引入必须的静态的资源 `{!! ckeditor_js() !!}` 和 `{!! ckeditor_css() !!}` 。
+>   参考本扩展包 `resources\views` 目录下 `example` 代码，引入必须的静态的资源 `{!! ckeditor_js() !!}` 和 `{!! ckeditor_css() !!}` 。
 
-如需要使用 `CKEditor` 基础版工具栏布局，就引入 `@include('ckeditor::parts.basic', ['editorId' => 'editor1'])` 其中 传入的 `editorId` 变量值需与前端上面 `textarea` 元素 `id` 一一对应。其他版本，如 `standard` (标准版）、 `full` （完整版） 、 `customized` （自定义版）以此来推，自定义版的 `blade` 模板可供开发者自行配置与修改（其他版本建议不要随意修改）。
+#### 各版本编辑器工具栏对比图
 
-`full` 版使用示例：
+![基础版](http://mweb-upyun.test.upcdn.net/2018/01/12/23f5d8cb246f111d2ab1d83abfad2cf0.png)
+图1 - 基础（`basic`）版
+
+![标准版](http://mweb-upyun.test.upcdn.net/2018/01/12/f41ba89ad60005d6d52fa8ff8962c296.png)
+图2 - 标准（`standard`）版 
+
+![完整版](http://mweb-upyun.test.upcdn.net/2018/01/12/62a7d4b79d60f739b314619049b2511c.png)
+图3 - 完整（`full`）版  
+
+目前本扩展包自定义（`customized`）版与完整版完全相同，发布包资源之后，开发者自行配置与修改 `customized.blade.php` 模板文件（位于 `resource/views/vendor/ckeditor/parts/` 目录），其他版本的模板建议不要修改。
+
+
+#### 使用示例
+
+如果想使用 `CKEditor` 基础版编辑器，就引入 `@include('ckeditor::parts.basic', ['editorId' => 'editor1'])` 代码。其中，传入的 `editorId` 变量值需与前端上面 `textarea` 元素 `id` 一一对应。其他版本，如 `standard` (标准版）、 `full` （完整版） 、 `customized` （自定义版）以此来推。
+
+下面示例代码引入的 `full` 版 CKEditor 编辑器：
 
 ```html
 <!DOCTYPE html>
@@ -59,11 +75,13 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
     language: 'zh-TW',
     uiColor: '#9AB8F3',
     @overwrite
-    @include('ckeditor::parts.'.$mode, ['editorId' => 'editor1'])
+    @include('ckeditor::parts.full', ['editorId' => 'editor1'])
 </body>
 </html>
 ```
 
+## 关于
 
+博客 ： http://douyasi.com
 
-
+>   `Copyright (c) 2014-2018` [douyasi](https://github.com/douyasi) - 由 [ycrao](https://raoyc.com) 创建的组织。
