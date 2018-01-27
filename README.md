@@ -74,10 +74,30 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
     // 可以继续追加额外的 CKEditor 代码，具体请参考官方文档 https://sdk.ckeditor.com/ 或 https://docs.ckeditor.com/ckeditor4/docs/
     language: 'zh-TW',
     uiColor: '#9AB8F3',
+    filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=btn_up',
+    // filebrowserUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=btn_up',
+    imageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=drop_or_clipboard_up',  // only for image
+    // uploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=drop_or_clipboard_up',
     @overwrite
     @include('ckeditor::parts.full', ['editorId' => 'editor1'])
 </body>
 </html>
+```
+
+#### 图片上传
+
+图片上传默认使用本扩展包提供的服务（仅限本地存储），你也可以编写自己的代码使用自己的
+路由。要禁用本包上传服务，只需修改 `ckeditor.php` 配置中 `usingLocalPackageUploadServer` 项为 `false` 。
+
+图片上传支持三种模式：传统表单、浏览器拖曳上传和剪切板粘贴图片上传（PS - 部分浏览器可能不支持拖曳与剪切板粘贴上传）。
+
+传统浏览器 form 表单按钮提交上传，需配置 `filebrowserImageUploadUrl`  或 `filebrowserUploadUrl` ；浏览器拖曳文件上传或者剪切板粘贴图片上传，需配置 `imageUploadUrl` 或 `uploadUrl` ：
+
+```json
+filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=btn_up',
+imageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=drop_or_clipboard_up',
+filebrowserUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=btn_up',
+uploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=drop_or_clipboard_up',
 ```
 
 ## 关于
