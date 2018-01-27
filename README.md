@@ -13,7 +13,7 @@
 
 ## 安装与配置
 
-在 `composer.json` 新增 `"douyasi/laravel-editor-md": "dev-master"` 依赖，然后执行： `composer update` 操作。
+在 `composer.json` 新增 `"douyasi/laravel-editor-md": "~1.0"` 依赖，然后执行： `composer update` 操作。
 
 依赖安装完毕之后，在 `app.php` 中添加：
 
