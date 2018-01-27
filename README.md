@@ -1,4 +1,4 @@
-# # CKEditor for Laravel
+# CKEditor for Laravel
 
 >  `CKEditor` —— 国外大名鼎鼎的富文本编辑器，官方网站：https://ckeditor.com/ 。
 
@@ -93,7 +93,7 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
 
 传统浏览器 form 表单按钮提交上传，需配置 `filebrowserImageUploadUrl`  或 `filebrowserUploadUrl` ；浏览器拖曳文件上传或者剪切板粘贴图片上传，需配置 `imageUploadUrl` 或 `uploadUrl` ：
 
-```json
+```javascript
 filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=btn_up',
 imageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=drop_or_clipboard_up',
 filebrowserUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=btn_up',
