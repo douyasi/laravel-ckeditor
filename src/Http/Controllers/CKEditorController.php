@@ -61,7 +61,7 @@ class CKEditorController extends Controller
                     $savePath = $destPath.''.date('Ymd', time());
                     is_dir($savePath) || mkdir($savePath);  //如果不存在则创建目录
                     $name = $file->getClientOriginalName();
-                    $ext = $file->getClientOriginalExtension();
+                    $ext = strtolower($file->getClientOriginalExtension());
                     $oFile = $hash.'.'.$ext;
                     $fullfilename = '/'.$savePath.'/'.$oFile;  //原始完整路径
                     if ($file->isValid()) {
