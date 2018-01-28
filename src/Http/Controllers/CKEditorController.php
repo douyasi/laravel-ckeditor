@@ -105,7 +105,7 @@ EOT;
     /**
      * 针对 CKEditor 所写的图片浏览控制器
      * 
-     * @param  Request $requst
+     * @param  Request $request
      * @return Response
      */
     public function getBrowser(Request $request)

@@ -23,3 +23,15 @@ function ckeditor_js()
 {
     return '<script type="text/javascript" src="/vendor/ckeditor/ckeditor.js"></script>';
 }
+
+
+/**
+ * 取得 CKEditor 入库的正文内容
+ *
+ * @param string $content
+ * @return string
+ */
+function ckeditor_content($content)
+{
+    return htmlspecialchars_decode($content);
+}
