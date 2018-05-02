@@ -70,11 +70,11 @@ class CKEditorController extends Controller
                         }
                         $oFilePath = $savePath.'/'.$oFile;
                         $_url = $fullfilename;
-                        if ($by === 'btn_up') {
+                        if ($by === 'btn_up') {  // 传统表单上传
                             return <<<EOT
 <script type="text/javascript">window.parent.CKEDITOR.tools.callFunction({$funcNum}, '{$_url}', 'success!');</script>";
 EOT;
-                        } elseif ($by == 'drop_or_clipboard_up') {
+                        } elseif ($by === 'drop_or_clipboard_up') {  // 拖曳上传或剪切板上传
                             return response()->json([
                                 'uploaded' => 1,
                                 'fileName' => $name,
