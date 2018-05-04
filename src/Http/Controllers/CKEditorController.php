@@ -32,7 +32,7 @@ class CKEditorController extends Controller
     /**
      * 针对 CKEditor 所写的图片上传控制器
      * 
-     * @param  Request $requst
+     * @param  Request $request
      * @return Response
      */
     public function postUploadPicture(Request $request)
