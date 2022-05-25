@@ -1,16 +1,11 @@
 # CKEditor for Laravel
 
->  `CKEditor` —— 国外大名鼎鼎的富文本编辑器，官方网站：https://ckeditor.com/ 。
+>  `CKEditor` —— 国外大名鼎鼎的富文本编辑器，官方网站：https://ckeditor.com/ 。目前官方最新版本为 `CKEditor5` ，建议配合 `React/Vue` 等前端框架工程化使用。
 
 [![Latest Stable Version](https://poser.pugx.org/douyasi/laravel-ckeditor/v/stable.svg?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 [![Latest Unstable Version](https://poser.pugx.org/douyasi/laravel-ckeditor/v/unstable.svg?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 [![License](https://poser.pugx.org/douyasi/laravel-ckeditor/license?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 [![Total Downloads](https://poser.pugx.org/douyasi/laravel-ckeditor/downloads?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
-
-## 三种上传方式预览
-
-拖曳上传、剪切板上传、选择上传
-
 
 
 ## 兼容版本
