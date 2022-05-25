@@ -1,4 +1,4 @@
-# CKEditor(4) for Laravel
+# CKEditor(4) for Laravel with image upload support
 
 [ENGLISH README](./README_en.md)
 
