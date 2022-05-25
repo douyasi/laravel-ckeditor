@@ -61,21 +61,20 @@ Images will be upload to `public/uploads/content` directory, and this package co
 
 ## Usage
 
->   See the `example.blade.php` code in `resources\views` directory, you need add `{!! ckeditor_js() !!}` and `{!! ckeditor_css() !!}` in .
+>   See the `example.blade.php` code in `resources\views` directory, you need add `{!! ckeditor_js() !!}` and `{!! ckeditor_css() !!}` in your blade template file.
 
 #### Toolbar layout in different CKEditor(4) versions
 
 ![basic](http://mweb-upyun.test.upcdn.net/2018/01/12/23f5d8cb246f111d2ab1d83abfad2cf0.png)
-F1 - `basic` version
+Figure 1 - `basic` version
 
 ![standard](http://mweb-upyun.test.upcdn.net/2018/01/12/f41ba89ad60005d6d52fa8ff8962c296.png)
-F2 - `standard` version
+Figure 2 - `standard` version
 
 ![full](http://mweb-upyun.test.upcdn.net/2018/01/12/62a7d4b79d60f739b314619049b2511c.png)
-图3 - `full` version
+Figure 3 - `full` version
 
 `customized` version as same as full version, you can modify it (located in `resource/views/vendor/ckeditor/parts/customized.blade.php` directory) after package asset published. Other versions should not be modified. 
-
 
 #### Example
 
