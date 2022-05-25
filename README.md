@@ -7,6 +7,12 @@
 [![License](https://poser.pugx.org/douyasi/laravel-ckeditor/license?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 [![Total Downloads](https://poser.pugx.org/douyasi/laravel-ckeditor/downloads?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 
+## 三种上传方式预览
+
+拖曳上传、剪切板上传、选择上传
+
+
+
 ## 兼容版本
 
 本扩展包经过测试，适配 `Laravel 5.1` 以上稳定版本（`5.0` 版本理论上也是可行的，但未经测试）。
@@ -91,6 +97,8 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
 
 图片上传支持三种模式：传统表单、浏览器拖曳上传和剪切板粘贴图片上传（PS - 部分浏览器可能不支持拖曳与剪切板粘贴上传）。
 
+![upload-gif](https://s1.ystatic.cn/uploads/content/20180503/5aeb2a713fcf5_45o.gif) 
+
 传统浏览器 form 表单按钮提交上传，需配置 `filebrowserImageUploadUrl`  或 `filebrowserUploadUrl` ；浏览器拖曳文件上传或者剪切板粘贴图片上传，需配置 `imageUploadUrl` 或 `uploadUrl` ：
 
 ```javascript
@@ -104,4 +112,4 @@ uploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=drop_or_cli
 
 博客 ： http://douyasi.com
 
->   `Copyright (c) 2014-2018` [douyasi](https://github.com/douyasi) - 由 [ycrao](https://raoyc.com) 创建的组织。
+>   `Copyright (c) 2014-2099` [douyasi](https://github.com/douyasi) - 由 [ycrao](https://raoyc.com) 创建的组织。
