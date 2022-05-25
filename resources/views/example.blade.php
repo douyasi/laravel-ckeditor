@@ -13,7 +13,7 @@
     @section('ckeditorExtraScript')
     // 可以继续追加额外的 CKEditor 代码，具体请参考官方文档 https://sdk.ckeditor.com/ 或 https://docs.ckeditor.com/ckeditor4/docs/
     @if($mode == 'full')
-    extraPlugins : 'uploadimage',
+    extraPlugins : 'uploadimage,image2',
     filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=btn_up',
     imageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=drop_or_clipboard_up',
     // filebrowserUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&by=btn_up',

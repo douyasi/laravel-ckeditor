@@ -1,4 +1,6 @@
-# CKEditor for Laravel
+# CKEditor(4) for Laravel with image upload support
+
+[ENGLISH README](./README_en.md)
 
 >  `CKEditor` —— 国外大名鼎鼎的富文本编辑器，官方网站：https://ckeditor.com/ 。目前官方最新版本为 `CKEditor5` ，建议配合 `React/Vue` 等前端框架工程化使用。
 
@@ -7,10 +9,13 @@
 [![License](https://poser.pugx.org/douyasi/laravel-ckeditor/license?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 [![Total Downloads](https://poser.pugx.org/douyasi/laravel-ckeditor/downloads?format=flat-square)](https://packagist.org/packages/douyasi/laravel-ckeditor)
 
+## 更新日志
+
+- `2022-05-25` 发布 `1.2` 版本，更新 `CKEditor4` 版本到最新的 `4.19.0` 版本，并适配图片上传接口。
 
 ## 兼容版本
 
-本扩展包经过测试，适配 `Laravel 5.1` 以上稳定版本（`5.0` 版本理论上也是可行的，但未经测试）。
+本扩展包经过测试，适配 `Laravel 5` 以上所有版本（`Laravel 5 - 9` 均适配）。
 
 ## 安装与配置
 

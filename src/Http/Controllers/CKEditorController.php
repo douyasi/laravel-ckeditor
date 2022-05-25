@@ -23,7 +23,7 @@ class CKEditorController extends Controller
             } else {
                 return abort(404);
             }
-            
+
         } else {
             return 'You can see the example page only in DEBUG mode!';
         }
@@ -31,14 +31,13 @@ class CKEditorController extends Controller
 
     /**
      * 针对 CKEditor 所写的图片上传控制器
-     * 
+     *
      * @param  Request $request
      * @return Response
      */
     public function postUploadPicture(Request $request)
     {
         if (config('ckeditor.usingLocalPackageUploadServer', false)) {
-
             if ($request->hasFile('upload')) {
                 //
                 $file = $request->file('upload');
@@ -70,41 +69,44 @@ class CKEditorController extends Controller
                         }
                         $oFilePath = $savePath.'/'.$oFile;
                         $_url = $fullfilename;
-                        if ($by === 'btn_up') {  // 传统表单上传
-                            return <<<EOT
-<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction({$funcNum}, '{$_url}', 'success!');</script>";
-EOT;
-                        } elseif ($by === 'drop_or_clipboard_up') {  // 拖曳上传或剪切板上传
+                        if ($by === 'drop_or_clipboard_up' || $by === 'btn_up') {  // 拖曳上传或剪切板上传 || 传统表单上传
                             return response()->json([
                                 'uploaded' => 1,
                                 'fileName' => $name,
                                 'url' => $_url,
                             ]);
                         } else {
-                            return <<<EOT
-<script type="text/javascript">alert('upload with wrong way and config!')</script>
-EOT;
+                            return response()->json([
+                                'uploaded' => 0,
+                                'error' => [
+                                    'message' => 'upload with wrong way and config!',
+                                ]
+                            ]);
                         }
-
                     }
                 }
                 $err = $validator->messages()->first();
                 $err = $err ? ': '.$err : '';
             }
-            return <<<EOT
-<script type="text/javascript">alert('upload failed {$err} !')</script>
-EOT;
-        } else {
-            return <<<EOT
-<script type="text/javascript">alert('upload not allowed!')</script>
-EOT;
+            return response()->json([
+                'uploaded' => 0,
+                'error' => [
+                    'message' => 'upload failed '. $err .'!',
+                ]
+            ]);
         }
+        return response()->json([
+            'uploaded' => 0,
+            'error' => [
+                'message' => 'upload not allowed!',
+            ]
+        ]);
     }
 
 
     /**
      * 针对 CKEditor 所写的图片浏览控制器
-     * 
+     *
      * @param  Request $request
      * @return Response
      */

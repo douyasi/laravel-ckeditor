@@ -1,7 +1,7 @@
 {
     "name": "douyasi/laravel-ckeditor",
     "description": "CKEditor for laravel",
-    "keywords": ["laravel", "CKEditor", "web editor", "douyasi", "wysiwyg"],
+    "keywords": ["laravel", "CKEditor4", "web editor", "douyasi", "wysiwyg", "image-upload"],
     "license": "MIT",
     "authors": [
         {
