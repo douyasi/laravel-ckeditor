@@ -99,7 +99,7 @@ php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider"
 
 ![upload-gif](https://s1.ystatic.cn/uploads/content/20180503/5aeb2a713fcf5_45o.gif) 
 
-传统浏览器 form 表单按钮提交上传，需配置 `filebrowserImageUploadUrl`  或 `filebrowserUploadUrl` ；浏览器拖曳文件上传或者剪切板粘贴图片上传，需配置 `imageUploadUrl` 或 `uploadUrl` ：
+传统浏览器表单按钮提交上传，需配置 `filebrowserImageUploadUrl`  或 `filebrowserUploadUrl` ；浏览器拖曳文件上传或者剪切板粘贴图片上传，需配置 `imageUploadUrl` 或 `uploadUrl` ：
 
 ```javascript
 filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=images&by=btn_up',
