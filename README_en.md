@@ -45,7 +45,7 @@ Execute `artisan` command below in terminal to publish all assets by this packag
 php artisan vendor:publish --provider="Douyasi\CKEditor\CKEditorServiceProvider" --force
 ```
 
-Then, start your Laravel web server, and visit links below.
+Then, serve your Laravel app, and visit links below.
 
 ```bash
 $ php artisan serve
@@ -55,30 +55,30 @@ $ php artisan serve
 # http://127.0.0.1:8000/laravel-ckeditor/example/full
 ```
 
-`/laravel-ckeditor/example/basic` for basic version, and `/laravel-ckeditor/example/standard` for standard version, and `/laravel-ckeditor/example/full` for full version.
+`/laravel-ckeditor/example/basic` for basic mode, and `/laravel-ckeditor/example/standard` for standard mode, and `/laravel-ckeditor/example/full` for full mode.
 
-Images will be upload to `public/uploads/content` directory, and this package configurations in  `config/ckeditor.php` file.
+Images will be upload to `public/uploads/content` directory, and the config file of this package is located in `config/` directory named `ckeditor.php`.
 
 ## Usage
 
->   See the `example.blade.php` code in `resources\views` directory, you need add `{!! ckeditor_js() !!}` and `{!! ckeditor_css() !!}` in your blade template file.
+>   See the `example.blade.php` code in `resources\views` directory, you need add `{!! ckeditor_js() !!}` and `{!! ckeditor_css() !!}` in your blade template file for loading CKEditor's static assets.
 
-#### Toolbar layout in different CKEditor(4) versions
+#### Toolbar layout under different CKEditor(4) modes
 
 ![basic](http://mweb-upyun.test.upcdn.net/2018/01/12/23f5d8cb246f111d2ab1d83abfad2cf0.png)
-Figure 1 - `basic` version
+Figure 1 - `basic` mode
 
 ![standard](http://mweb-upyun.test.upcdn.net/2018/01/12/f41ba89ad60005d6d52fa8ff8962c296.png)
-Figure 2 - `standard` version
+Figure 2 - `standard` mode
 
 ![full](http://mweb-upyun.test.upcdn.net/2018/01/12/62a7d4b79d60f739b314619049b2511c.png)
-Figure 3 - `full` version
+Figure 3 - `full` mode
 
-`customized` version as same as full version, you can modify it (located in `resource/views/vendor/ckeditor/parts/customized.blade.php` directory) after package asset published. Other versions should not be modified. 
+`customized` mode as same as full mode, you can modify it (located in `resource/views/vendor/ckeditor/parts/customized.blade.php` directory) after package asset published. Other versions should not be modified. 
 
 #### Example
 
-Here is an example of `full` version CKEditor in blade html file. Using `basic` version then include `@include('ckeditor::parts.basic', ['editorId' => 'editor1'])` basic, `editorId` should be as same as the value of `id` in html `textarea` element (that rendered as `CKEditor` instance here). Using `standard` version then include `@include('ckeditor::parts.standard', ...)` and so on.
+Here is an example of `full` mode of CKEditor in blade html/php file. Include the code `@include('ckeditor::parts.basic', ['editorId' => 'editor1'])` when using basic mode. The value of `editorId` should be as same as the value of `id` in html `textarea` element (that rendered as `CKEditor` instance here). Other modes are similar without examples here.
 
 ```html
 <!DOCTYPE html>
@@ -94,7 +94,7 @@ Here is an example of `full` version CKEditor in blade html file. Using `basic` 
         &lt;p&gt;This is some sample text. You are using &lt;a href=&quot;http://ckeditor.com&quot;&gt;CKEditor&lt;/a&gt;, an online &lt;abbr title=&quot;What You See Is What You Get&quot;&gt;WYSIWYG&lt;/abbr&gt;&amp;nbsp;editor.&lt;/p&gt;
     </textarea>
     @section('ckeditorExtraScript')
-    // add some addon config, ref: https://sdk.ckeditor.com/ 或 https://docs.ckeditor.com/ckeditor4/docs/
+    // add some addon config, ref: https://sdk.ckeditor.com/ or https://docs.ckeditor.com/ckeditor4/docs/
     language: 'zh-TW',
     uiColor: '#9AB8F3',
     filebrowserImageUploadUrl : '/laravel-ckeditor/upload?_token={!! csrf_token() !!}&type=Images&by=btn_up',
@@ -107,15 +107,15 @@ Here is an example of `full` version CKEditor in blade html file. Using `basic` 
 </html>
 ```
 
-#### Image Uploads
+#### Upload Image(s)
 
 Make your own image or file upload code, just change `usingLocalPackageUploadServer` value to `false` in `ckeditor.php` file to disable image upload by this package.
 
-Support image uploads by three ways:
+Support upload a image by three ways:
 
-- traditional form upload
-- drop/drag upload
-- clipboard upload
+- btn upload: traditional form upload, need to select a file and click a button
+- drop upload: drop/drag image file to browser editor area, then upload automatically
+- clipboard upload: screen shot to clipboard and paste it to editor area, then upload automatically
 
 ![upload-gif](https://s1.ystatic.cn/uploads/content/20180503/5aeb2a713fcf5_45o.gif) 
 
