@@ -21,7 +21,18 @@
 
 在 `composer.json` 新增 `"douyasi/laravel-ckeditor": "~1.0"` 依赖，然后执行： `composer update` 操作。
 
-依赖安装完毕之后，在 `app.php` 中添加：
+亦可在项目目录下，终端中执行 `composer require "douyasi/laravel-ckeditor:~1.0"` 命令。
+
+```bash
+$ cd /path/to/your/laravel/project
+$ vim composer.json
+# 添加 "douyasi/laravel-ckeditor": "~1.0"
+$ composer install/update -vvv
+# 或者 执行
+$ composer require "douyasi/laravel-ckeditor: ~1.0"
+```
+
+如果 Laravel 插件自动发现功能没起到作用，需要手动在 `app.php` 中添加：
 
 ```php
 'providers' => [
