@@ -9,7 +9,7 @@
 
 ## Update Log
 
-- Version `1.2` have published on `2022/05/25`, update `CKEditor(4)` to current newest version `4.19.0`, make some adapters to image uploads
+- Version `1.2` have published on `2022/05/25`, update `CKEditor(4)` to current newest version `4.19.0`, adapt to image uploads of new version
 
 ## Compatibility
 
@@ -22,7 +22,6 @@ Add `"douyasi/laravel-ckeditor": "~1.0"` to your Laravel project `composer.json`
 Or, just execute `composer require "douyasi/laravel-ckeditor:~1.0"` command in your terminal when change to target project directory.
 
 ```bash
-
 $ cd /path/to/your/laravel/project
 $ vim composer.json
 # add "douyasi/laravel-ckeditor": "~1.0" to it
